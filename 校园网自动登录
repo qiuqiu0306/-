@@ -35,3 +35,51 @@ post_data={'domain':'CMCC',
 z=requests.post(post_addr,data=post_data,headers=post_header)
 
 
+
+
+
+
+
+修改版本
+＃ -  *  - 编码：UTF-8  -  *  - 
+import requests
+import os
+import time 
+while True:
+    status = os.system('ping -c 1 www.baidu.com')
+    if status == 1:
+        print (u'wifi掉线')
+    #登录地址
+        post_addr="http://a.nuist.edu.cn/index.php/index/login"#abc
+
+     #构造头部信息
+        post_header={
+    'Host': 'a.nuist.edu.cn',
+    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:63.0) Gecko/20100101 Firefox/63.0',
+    'Accept': 'application/json, text/javascript, */*; q=0.01',
+    'Accept-Language':'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+    'Accept-Encoding': 'gzip, deflate',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'X-Requested-With':'XMLHttpRequest',
+    'Referer':'http://a.nuist.edu.cn/index.php?url=aHR0cDovL3d3dy5tc24uY29tLz9vY2lkPXdpc3ByJnBjPXU0Nzc=&ocid=wispr&pc=u477http:/',
+    'Content-Length': '66',
+
+    'Cookie':'_gscu_1147341576=059821653286gq10; sunriseUsername=20161334057;\
+    sunriseDomain=CMCC;sunriseRememberPassword=true; sunrisePassword=740823;\
+    PHPSESSID=jb07dtnrar7has4cu74h3pqfd0;think_language=zh-CN',
+    'Connection':'keep-alive',
+      }
+
+#构造登录数据
+        post_data={
+           'domain':'CMCC',
+        'enablemacauth':'0',
+           'password':'NzQwODIz',
+           'username':'18795906808'
+          }   
+#发送post请求登录网页
+        z=requests.post(post_addr,data=post_data,headers=post_header)
+    else:
+        print (u'连接状态')
+    time.sleep(1)
+
