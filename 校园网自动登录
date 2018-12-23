@@ -38,6 +38,6 @@ while True:
         z=requests.post(post_addr,data=post_data,headers=post_header)
     else:
         print (u'连接状态')
-    time.sleep(10)
+    time.sleep(1)
 
 
